@@ -1,0 +1,14 @@
+#get gray scale
+def get_grayscale(image):
+    return cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
+
+#remove noise
+def removenoise(image):
+    return cv2.medianBlur(image,5)
+
+def threshoulding(image):
+    return cv2.threshold(image,0,255,cv2.THRESH_BINARY + cv2.THRESH_OTSU)[1]
+
+img = get_grayscale(img)
+img = removenoise(img)
+img = threshoulding(img)

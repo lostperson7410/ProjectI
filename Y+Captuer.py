@@ -24,7 +24,7 @@ def detect(img,img_id):
       for c in cnts:
                   # approximate the contour
                   peri = cv2.arcLength(c, True)
-                  approx = cv2.approxPolyDP(c, 0.018 * peri, True)
+                  approx = cv2.approxPolyDP(c, 0.02 * peri, True)
                   # if our approximated contour has four points, then
                   # we can assume that we have found our screen
                   if len(approx) == 4:
@@ -54,7 +54,7 @@ def Cropp(gray,new_image,mask,id,img_id):
       (bottomx, bottomy) = (np.max(x), np.max(y))
       Cropped = gray[topx:bottomx+1, topy:bottomy+1]
 
-      write_dataset(Cropped,img_id,id)
+      #write_dataset(Cropped,img_id,id)
       #showresult(Cropped,new_image)
 
 def write_dataset(img,id,img_id):
@@ -71,7 +71,7 @@ def showresult(edged,img,gray,Cropped,new_image):
 
 
 img_id = 0
-im = cv2.VideoCapture(0)
+im = cv2.VideoCapture(1)
 
 while(True):
       ret,frame = im.read()

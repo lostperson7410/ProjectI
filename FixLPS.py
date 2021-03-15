@@ -7,7 +7,7 @@ frameheight = 480
 nPlateCascade = cv2.CascadeClassifier("haarcascade_russian_plate_number.xml")
 minArea = 800
 color = (255,0,255)
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(1)
 
 while True:
     success, img = cap.read()

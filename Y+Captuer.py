@@ -6,8 +6,10 @@ from numpy.lib.twodim_base import mask_indices
 import pytesseract
 from PIL import Image
 
+car_cascade = cv2.CascadeClassifier( 'cars.xml')
 
 def detect(img,img_id):
+
 
 
 
@@ -15,6 +17,9 @@ def detect(img,img_id):
       gray = cv2.bilateralFilter(gray, 11, 17, 17)
 
       edged = cv2.Canny(gray, 30, 200)
+
+
+
 
       nts = cv2.findContours(edged.copy(), cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
       cnts = imutils.grab_contours(nts)
@@ -24,7 +29,7 @@ def detect(img,img_id):
       for c in cnts:
                   # approximate the contour
                   peri = cv2.arcLength(c, True)
-                  approx = cv2.approxPolyDP(c, 0.02 * peri, True)
+                  approx = cv2.approxPolyDP(c, 0.018 * peri, True)
                   # if our approximated contour has four points, then
                   # we can assume that we have found our screen
                   if len(approx) == 4:
@@ -71,7 +76,7 @@ def showresult(edged,img,gray,Cropped,new_image):
 
 
 img_id = 0
-im = cv2.VideoCapture(1)
+im = cv2.VideoCapture(0)
 
 while(True):
       ret,frame = im.read()

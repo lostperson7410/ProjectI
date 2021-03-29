@@ -5,7 +5,7 @@ import pytesseract
 from PIL import Image
 
 
-img =cv2.imread('6.jpg',cv2.IMREAD_COLOR)
+img =cv2.imread('1.jpg',cv2.IMREAD_COLOR)
 
 img = cv2.resize(img, (620,480) )
 
@@ -47,8 +47,8 @@ new_image = cv2.bitwise_and(img,img,mask=mask)
 (bottomx, bottomy) = (np.max(x), np.max(y))
 Cropped = gray[topx:bottomx+1, topy:bottomy+1]
 
-id=1
-cv2.imwrite("data/pic"+str(id)+".jpg",Cropped)
+#id=1
+#cv2.imwrite("data/pic"+str(id)+".jpg",Cropped)
 
 
 cv2.imshow('Real',img)

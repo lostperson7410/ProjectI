@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 #while True:
    # success, img = cv2.imread("1.jpg")
-img =cv2.imread('3.jpg')
+img =cv2.imread('6.jpg')
 plt.imshow(img)
 plt.show()
 imgGray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)

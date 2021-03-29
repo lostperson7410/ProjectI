@@ -1,7 +1,7 @@
 import cv2
 
 ###############################################
-path = 'haarcascade_cascade_LPS.xml'
+path = 'haarcascade_russian_plate_number.xml'
 cameraNo = 1
 objectName = 'LSP'
 frameWidth = 640

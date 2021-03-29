@@ -43,7 +43,7 @@ def detect(img,img_id):
                               mask = np.zeros(gray.shape,np.uint8)
                               new_image = cv2.drawContours(mask,[screenCnt],0,255,-1,)
                               new_image = cv2.bitwise_and(img,img,mask=mask)
-                              #cv2.imshow('new_image',new_image)
+                              cv2.imshow('new_image',new_image)
                               Cropp(gray,new_image,mask,id,img_id)
       return img
 
@@ -54,8 +54,8 @@ def Cropp(gray,new_image,mask,id,img_id):
       (bottomx, bottomy) = (np.max(x), np.max(y))
       Cropped = gray[topx:bottomx+1, topy:bottomy+1]
 
-      write_dataset(Cropped,img_id,id)
-      #showresult(Cropped,new_image)
+     # write_dataset(Cropped,img_id,id)
+      showresult(Cropped,new_image)
 
 def write_dataset(img,id,img_id):
       cv2.imwrite("data/pic"+str(id)+"."+str(img_id)+".jpg",img)

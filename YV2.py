@@ -55,8 +55,8 @@ def Cropp(gray,new_image,mask,id,img_id):
       (bottomx, bottomy) = (np.max(x), np.max(y))
       Cropped = gray[topx:bottomx+1, topy:bottomy+1]
       
-      realimg(Cropped)
-      write_dataset(Cropped,img_id,id)
+      #realimg(Cropped)
+      #write_dataset(Cropped,img_id,id)
       #showresult(Cropped,new_image)
 
 def write_dataset(img,id,img_id):
@@ -75,10 +75,11 @@ def realimg(img):
 
 
 img_id = 0
-im = cv2.VideoCapture(0)
+im = cv2.VideoCapture('Freewa.mp4')
 while(True):
       ret,frame = im.read()
       frame=detect(frame,img_id)
+      cv2.imshow('Frame',frame)
       #img_id+=1
 
       if(cv2.waitKey(1) & 0xff== ord('q')):

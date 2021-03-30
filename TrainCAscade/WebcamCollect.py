@@ -2,7 +2,7 @@ import cv2
 import os
 import time
 myPath = "data/images"
-cameraNo = 1
+cameraNo = 0
 cameraBrightness = 190
 moduleVal = 10
 minBlur = 500

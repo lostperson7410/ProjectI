@@ -5,7 +5,7 @@ tess.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 import matplotlib.pyplot as plt
 
 
-#while True:
+#while True:....
    # success, img = cv2.imread("1.jpg")
 img =cv2.imread('6.jpg')
 plt.imshow(img)
